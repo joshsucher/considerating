@@ -214,7 +214,11 @@ body {
   -o-transition: 0.1s linear all;
   transition: 0.1s linear all;
 }
-
+.btn2:hover {
+  background-position: 0 -15px;
+  color: #000;
+  text-decoration: none;
+}
 .btn2:focus {
   outline: 1px dotted #666;
 }
