@@ -11,25 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120221191743) do
+ActiveRecord::Schema.define(:version => 20120222054726) do
 
   create_table "considerations", :force => true do |t|
-    t.string   "content"
+    t.text     "content",     :limit => 1000
     t.integer  "user_id"
-    t.datetime "created_at",                                                   :null => false
-    t.datetime "updated_at",                                                   :null => false
-    t.integer  "votes_count",                                 :default => 0,   :null => false
-    t.decimal  "votes_total", :precision => 20, :scale => 10, :default => 0.0, :null => false
-    t.integer  "v1",                                          :default => 0,   :null => false
-    t.integer  "v2",                                          :default => 0,   :null => false
-    t.integer  "v3",                                          :default => 0,   :null => false
-    t.integer  "v4",                                          :default => 0,   :null => false
-    t.integer  "v5",                                          :default => 0,   :null => false
-    t.integer  "v6",                                          :default => 0,   :null => false
-    t.integer  "v7",                                          :default => 0,   :null => false
-    t.integer  "v8",                                          :default => 0,   :null => false
-    t.integer  "v9",                                          :default => 0,   :null => false
-    t.integer  "v10",                                         :default => 0,   :null => false
+    t.datetime "created_at",                                                                   :null => false
+    t.datetime "updated_at",                                                                   :null => false
+    t.integer  "votes_count",                                                 :default => 0,   :null => false
+    t.decimal  "votes_total",                 :precision => 20, :scale => 10, :default => 0.0, :null => false
+    t.integer  "v1",                                                          :default => 0,   :null => false
+    t.integer  "v2",                                                          :default => 0,   :null => false
+    t.integer  "v3",                                                          :default => 0,   :null => false
+    t.integer  "v4",                                                          :default => 0,   :null => false
+    t.integer  "v5",                                                          :default => 0,   :null => false
+    t.integer  "v6",                                                          :default => 0,   :null => false
+    t.integer  "v7",                                                          :default => 0,   :null => false
+    t.integer  "v8",                                                          :default => 0,   :null => false
+    t.integer  "v9",                                                          :default => 0,   :null => false
+    t.integer  "v10",                                                         :default => 0,   :null => false
   end
 
   add_index "considerations", ["user_id", "created_at"], :name => "index_considerations_on_uid_and_created_at"
