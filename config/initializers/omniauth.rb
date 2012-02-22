@@ -1,3 +1,11 @@
+# live site
+#Rails.application.config.middleware.use OmniAuth::Builder do
+#    provider :google_oauth2, '496909690695.apps.googleusercontent.com', '784i1MUyj22KEmPsVtFdJLgY', {access_type: 'online', approval_prompt: '', :scope => 'https://www.googleapis.com/auth/userinfo.profile', client_options: {ssl: {ca_file: Rails.root.join('lib/assets/cacert.pem').to_s}}}
+#end
+
+
+
+# localhost
 Rails.application.config.middleware.use OmniAuth::Builder do
-    provider :google_oauth2, '496909690695.apps.googleusercontent.com', '784i1MUyj22KEmPsVtFdJLgY', {access_type: 'online', approval_prompt: '', :scope => 'https://www.googleapis.com/auth/userinfo.profile', client_options: {ssl: {ca_file: Rails.root.join('lib/assets/cacert.pem').to_s}}}
+    provider :google_oauth2, '553232420876.apps.googleusercontent.com', 'KWRMSDOCLjXLelwWgeUgr5CV', {access_type: 'online', approval_prompt: '', :scope => 'https://www.googleapis.com/auth/userinfo.profile', client_options: {ssl: {ca_file: Rails.root.join('lib/assets/cacert.pem').to_s}}}
 end
