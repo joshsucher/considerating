@@ -8,6 +8,11 @@
   		<script type="text/javascript" src="http://use.typekit.com/vff5mnj.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 		<script src="http://cdn.jquerytools.org/1.2.6/form/jquery.tools.min.js"></script>
+		<script>   
+			if (!Modernizr.inputtypes.range) {    
+				$('#vote-<%= @consideration.id %>').html("<%= escape_javascript(render('shared/dropdown_voting_logged_out')) %>"); 
+			}
+		</script>
 		<script type="text/javascript">
 			 var _gaq = _gaq || [];
 			 _gaq.push(['_setAccount', 'UA-29376564-1']);
