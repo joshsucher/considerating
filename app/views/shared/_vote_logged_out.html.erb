@@ -1,4 +1,4 @@
-<div id="new-vote-<%= @consideration.id %>">
+<div id="new-vote-<%= @consideration.id %>" class="modern_logged_out">
 	<%= form_for @consideration, :remote => true do |f| %>
 		<%= range_field_tag :rating, :in => 10...101 %>
 		<div class="vote-creepy">creepy</div> 

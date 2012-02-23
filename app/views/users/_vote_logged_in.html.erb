@@ -1,4 +1,4 @@
-<div id="new-vote-<%= @consideration.id %>">
+<div id="new-vote-<%= @consideration.id %>" class="modern_logged_in">
 	<%= form_for current_user.votes.build(:voted_id => @consideration.id), 
     	         :remote => true do |f| %>
 		<%= f.hidden_field :voted_id %>
