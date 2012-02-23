@@ -10,7 +10,7 @@
 		<script src="http://cdn.jquerytools.org/1.2.6/form/jquery.tools.min.js"></script>
 		<script>   
 			if (!Modernizr.inputtypes.range) {    
-				$('#vote-<%= @consideration.id %>').html("<%= escape_javascript(render('shared/dropdown_voting_logged_out')) %>"); 
+				$('#new-vote-<%= @consideration.id %>').html("<%= escape_javascript(render('shared/dropdown_voting_logged_out')) %>"); 
 			}
 		</script>
 		<script type="text/javascript">
