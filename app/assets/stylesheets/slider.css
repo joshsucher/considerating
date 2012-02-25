@@ -1,7 +1,7 @@
 
 /* slider root element */
 .slider { 
-	background:#800000; 
+	background:#696969; 
 	height:2px; 
 	position:relative; 
 	cursor:pointer;
@@ -34,8 +34,8 @@
 	margin-top:1px;
 	border:1px solid #000;
 	cursor:move;
-    -webkit-box-shadow: inset -2px -2px 1px #000;
-	-moz-box-shadow: inset -2px -2px 1px #000;
+    -webkit-box-shadow: inset -2px -2px 1px #c0c0c0;
+	-moz-box-shadow: inset -2px -2px 1px #c0c0c0;
 	-moz-border-radius:14px;
 	-webkit-border-radius:14px; 
 
