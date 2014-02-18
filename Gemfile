@@ -24,7 +24,7 @@ group :assets do
   gem 'uglifier', '1.0.3'
 end
 
-gem 'jquery-rails', '2.0.0'
+gem 'jquery-rails', '~> 2.0.0'
 
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
@@ -41,7 +41,7 @@ group :test do
 	gem 'turn', '0.8.2', :require => false
 	gem 'rspec-rails', '2.8.1'
 	gem 'capybara', '1.1.2'
-	gem 'rb-fsevent', '0.4.3.1', :require => false
+	gem 'rb-fsevent', '>= 0.9.3', :require => false
 	gem 'growl'
 #	     , '1.0.3'
 #	gem 'growl_notify', '0.0.3'
@@ -55,6 +55,7 @@ end
 group :production do
 	gem 'pg'
 	gem 'thin'
+  gem 'rails_12factor'
 end
 
 # To use ActiveModel has_secure_password

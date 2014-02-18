@@ -1,17 +1,14 @@
-
-	<div id="user_nav">
-		<span class="user_nav">
-			<% if current_user %>
-				<%= link_to "#{current_user.name}", user_path(current_user) %> |
-				<%= link_to "Submit new consideration", '/new' %> |
-				<%= link_to "Sign out of Google", signout_path %> |
-			<% else %>
-				<%= link_to "Sign in with Google to submit new considerations", "/auth/google_oauth2" %> |
-			<% end %>
-			<%= link_to "View All", '/index' %> |  
-			<%= link_to "About", about_path %>
-		</span>
-	</div>
-	<div class="searchdiv">
+		<div class="searchdiv" id="searchdiv">
 		<%= render 'shared/search_form' %>
+	</div>
+		<div id="user_nav" class="user_nav">
+			<% if current_user %>
+				<b><%= link_to "#{current_user.name}".downcase, user_path(current_user) %></b> |
+				<%= link_to "submit new consideration", '/new' %> |
+				<%= link_to "sign out of google", signout_path %> |
+			<% else %>
+				<%= link_to "sign in with google to submit new considerations", "/auth/google_oauth2" %> |
+			<% end %>
+			<%= link_to "view all", '/index' %> |  
+			<%= link_to "about", about_path %>
 	</div>

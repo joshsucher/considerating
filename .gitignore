@@ -22,3 +22,6 @@ doc/
 .DS_Store
 /solr/data
 /config/initializers/*.*
+
+# Ignore env file
+var.env

@@ -9,7 +9,7 @@
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 		<script type="text/javascript">
 			 var _gaq = _gaq || [];
-			 _gaq.push(['_setAccount', 'UA-29376564-1']);
+			 _gaq.push(['_setAccount', 'UA-48136192-1']);
 			
 			
 			 _gaq.push(['_trackPageview']);
@@ -22,11 +22,12 @@
 		</script>
 	</head>
 	<body>
-		<div class="container">
-			<%= render 'layouts/nav' %>
+		<div class="container"><div id="header_container">
 			<div id="banner">
-				<%= link_to "Considerating.", root_path %>
+				<%= link_to "considerating.", root_path %>
 			</div>
+		<%= render 'layouts/nav' %>
+</div>
 			<div class="main-body">
 				<%= yield %>
 			</div>

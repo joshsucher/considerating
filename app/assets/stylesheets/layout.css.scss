@@ -1,6 +1,7 @@
 body {
 	color: #000000;
-	background-color: transparent; 
+	#background-color: transparent; 
+	#background-color: rgb(255,255,255);
 	background: url(cloudy2.jpg) no-repeat center center fixed;	
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -10,7 +11,7 @@ body {
 	a:active {color: #000000; text-decoration: none; }
 	a:visited {color: #000000; text-decoration: none; }
 	a:hover {color: #000000; text-decoration: none; }
-	font-family: "parisplus-clair", serif;
+	font-family: "futura-pt", sans-serif;
 	font-size: 15px;
 }
 
@@ -18,28 +19,37 @@ body {
     padding-bottom: 90px;
 }
 
+#header_container {
+display:table;
+margin-top:30px;
+height:70px;
+text-align:center;
+width:100%;
+}
+
 .main-body {
 	clear: both;
 }
 
 #banner {
-	float: left;
 	text-align: left;
-	font-family: "parisine-std-sombre", sans-serif;
+	font-family: "futura-pt", sans-serif;
+	font-weight: 700;
 		a:link {color: #000000; text-decoration: none; }
 		a:active {color: #000000; text-decoration: none; }
 		a:visited {color: #000000; text-decoration: none; }
-		a:hover {color: #000000; text-decoration: none; }
-	margin-top: 23px;
+		a:hover {color: #333333; text-decoration: none; }
 	font-size: 50px;
-  	line-height: 1em;
+  	display:table-cell;
+vertical-align:middle;
 }
 
 #user_nav {
 	direction: rtl;
-	float: right;
 	text-indent: 50px;
-	margin-top: 30px;
+  	display:table-cell;
+vertical-align:middle;
+text-align:right;
 }
 
 .user_nav {
@@ -58,19 +68,31 @@ body {
 	font-size: 13px;
 }
 
+.user_nav a:hover {
+	color:#333333;
+}
+
 .searchdiv {
-	text-align: right;
-	margin-top: 13px;
-	float: right;
 	background-color: transparent;
+  	display:table-cell;
+  	vertical-align:middle;
+  	width:auto;
+}
+
+#query {
+width:150px;
 }
 
 .searchspan {
 	background: white;
   	padding-right: 5px;
-  	margin-left: 8px;
-  	padding-top: 2px;
-    padding-bottom: 2px;
+  	margin-left: 25px;
+  	margin-right:25px;
+    vertical-align:middle;
+}
+
+.searchform {
+margin-bottom:0px;
 }
 
 .new-consideration-field,
@@ -78,13 +100,13 @@ body {
 	-webkit-border-radius: 6px;
   	-moz-border-radius: 6px;
   	border-radius: 6px;
-  	border: 1px dotted;
-	font-family: "parisplus-clair", serif;
+  	border: 1px solid #999999;
+	font-family: "futura-pt", sans-serif;
 }
 
 #search-page {
 	clear: both;
-	margin-top: 160px;
+	margin-top: 20px; //js 160px
 }
 
 #voting {
@@ -92,12 +114,12 @@ body {
 }
 
 .searchbutton {
-	background: url(magnifying_glass_12x12.png) no-repeat center;
+	background: url(magnifying_glass_12x12_gray.png) no-repeat center;
 }
 
 .searchfield,
 .searchbutton {
-	font-family: "parisplus-clair", serif;
+	font-family: "futura-pt", sans-serif;
 	border: none;
 	background-color: transparent;
   	-webkit-box-shadow: none;
@@ -130,6 +152,8 @@ body {
 	font-size: 24px;
   	line-height: 36px;
   	margin-top: 70px;
+  	font-family: "futura-pt", sans-serif;
+  	font-weight:700;
 }
 
 #about { 
@@ -166,13 +190,13 @@ body {
 	float: right;
 	padding-right: 40px;
 	padding-top: 10px;
-	font-family: "parisplus-clair", serif;
+	font-family: "futura-pt", sans-serif;
 	color: #000;
 }
 
 #new-cons-button,
 #vote-button {
-	font-family: "parisplus-clair", serif;
+	font-family: "futura-pt", sans-serif;
 }
 
 .vote-button {
@@ -185,7 +209,33 @@ body {
 
 #vote-button {
 	text-align: center;
+	vertical-align:middle;
 }
+
+input#vote-button{
+width:50px; /*same as the height*/
+height:50px; /*same as the width*/
+background:#ff0000;
+border:1px solid #ff0000; /*same colour as the background*/
+color:#fff;
+font-size:18px;
+/*set the border-radius at half the size of the width and height*/
+-webkit-border-radius: 25px;
+-moz-border-radius: 25px;
+border-radius: 25px;
+/*give the button a small drop shadow*/
+    -webkit-box-shadow: inset -2px -2px 1px rgb(100,0,0);
+	-moz-box-shadow: inset -2px -2px 1px rgb(100,0,0);
+}
+/***NOW STYLE THE BUTTON'S HOVER STATE***/
+input#vote-button:hover{
+background:#c20b0b;
+border:1px solid #c20b0b;
+/*reduce the size of the shadow to give a pushed effect*/
+    -webkit-box-shadow: inset -1px -1px 1px rgb(100,0,0);
+	-moz-box-shadow: inset -1px -1px 1px rgb(100,0,0);
+}
+
 
 .btn2 {
   text-align: center;
@@ -260,7 +310,7 @@ body {
 }
     
 #home-consideration-content {
-	padding-left: 50px;
+	//padding-left: 50px;
 }
 
 #consideration-content-big,
@@ -310,7 +360,7 @@ body {
 }
 
 #ban-btn {
-	font-family: "parisplus-clair", serif;
+	font-family: "futura-pt", sans-serif;
 }
 
 #consideration-content-big {
@@ -319,13 +369,12 @@ body {
 
 .home-bottom {
 	clear: both;
-	margin-top: 30px;
+	margin-top: 100px;
 	font-size: 24px;
+	font-weight: 700;
 	text-align:center;
-	a:link { border-bottom:1px dotted; }
-	a:active { border-bottom:1px dotted; }
-	a:visited { border-bottom:1px dotted; }
-	a:hover { border-bottom:1px dotted; }
+	text-decoration: none;
+	a:hover { color: #333333; }
 }
 
 #submitted {
@@ -342,7 +391,7 @@ body {
 	float: right;
 	margin-right: 30px;
 	margin-top: 10px;
-	font-size: 13px;
+	font-size: 16px;
 	text-align:center;
 	width: 100px;
 }
@@ -351,7 +400,7 @@ body {
 	float: right;
 	margin-right: 340px;
 	margin-top: 10px;
-	font-size:13px;
+	font-size:16px;
 	text-align:center;
 	width: 100px;
 }
@@ -382,4 +431,8 @@ body {
 
 #consideration-text {
 	text-align: center;
+	font-family:"futura-pt";
+	font-size:18px;
+	font-style:normal;
+	font-weight:bold;
 }

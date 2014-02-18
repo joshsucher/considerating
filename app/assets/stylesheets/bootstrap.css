@@ -191,7 +191,7 @@ body {
   color: #404040;
 }
 .container {
-  width: 940px;
+  width: 1000px; //jjs 940px
   margin-left: auto;
   margin-right: auto;
   zoom: 1;
@@ -206,7 +206,7 @@ body {
 }
 .container-fluid {
   position: relative;
-  min-width: 940px;
+  min-width: 1000px; // jjs 940px
   padding-left: 20px;
   padding-right: 20px;
   zoom: 1;
@@ -252,7 +252,7 @@ a:hover {
 }
 .row {
   zoom: 1;
-  margin-left: -20px;
+  #margin-left: -20px; //js
 }
 .row:before, .row:after {
   display: table;
@@ -265,7 +265,7 @@ a:hover {
 .row > [class*="span"] {
   display: inline;
   float: left;
-  margin-left: 20px;
+  #margin-left: 20px; //js
 }
 .span1 {
   width: 40px;
@@ -2116,7 +2116,7 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
 .pagination li {
   display: inline;
 }
-.pagination a {
+.pagination a, .pagination em {
   float: left;
   padding: 0 14px;
   line-height: 34px;

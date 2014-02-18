@@ -1,13 +1,13 @@
 <div id="each-consideration" class="hero-unit delete-able">
     <div id="consideration-text">
-    	<%= wrap(consideration.content) %><br />
+    	&#8220;<%= wrap(consideration.content) %>&#8221;<br />
 	</div>
 	<% @consideration = consideration %>
 	<div id="voting" class="vote-form">
 		<%= render 'users/vote_form' %><br />
 		<div id="submitted">
 			<%= render 'considerations/destroy_consideration' %>  
-			submitted by <%= link_to "#{@consideration.user.name}", 
+			submitted by <%= link_to "#{@consideration.user.name}".downcase, 
 			user_path(@consideration.user) %> on <%= @consideration.created_at.strftime("%-m/%-d/%y") %>
 			 • <%= link_to "permalink", consideration_path(consideration) %>
 		</div>

@@ -1,11 +1,11 @@
 
 /* slider root element */
 .slider { 
-	background:#696969; 
+	background:#999999; 
 	height:2px; 
 	position:relative; 
 	cursor:pointer;
-	border:1px solid #333;
+	border:1px solid #999;
 	width:200px;
 	margin-left: auto;
 	margin-right: auto;
@@ -25,7 +25,7 @@
 
 /* drag handle */
 .handle { 
-	background:#fff; 
+	background:rgb(255,0,0); 
 	height:14px;
 	width:14px;
 	top:-8px;
@@ -33,11 +33,23 @@
 	display:block; 
 	margin-top:1px;
 	border:1px solid #000;
-	cursor:move;
-    -webkit-box-shadow: inset -2px -2px 1px #c0c0c0;
-	-moz-box-shadow: inset -2px -2px 1px #c0c0c0;
+	cursor:-webkit-grab;
+	cursor:-moz-grab;
+    -webkit-box-shadow: inset -2px -2px 1px rgb(100,0,0);
+	-moz-box-shadow: inset -2px -2px 1px rgb(100,0,0);
 	-moz-border-radius:14px;
 	-webkit-border-radius:14px; 
+}
+
+.handle:active{
+	background:rgb(200,0,0); 
+	-webkit-box-shadow: inset -1px -1px 1px rgb(100,0,0);
+	-moz-box-shadow: inset -1px -1px 1px rgb(100,0,0);
+	cursor:-webkit-grabbing;
+	cursor:-moz-grabbing;
+		height:13px;
+	width:13px;
+		top:-7px;
 
 }
 
@@ -62,7 +74,7 @@
 	float: right;
 	margin-right: 150px;
 	margin-top: 10px;
-	font-size: 13px;
+	font-size: 16px;
 	text-align:center;
 	width: 100px;
 	-webkit-box-shadow: none transparent;
@@ -75,7 +87,7 @@
 	float: right;
 	margin-right: 100px;
 	margin-top: 10px;
-	font-size:13px;
+	font-size:16px;
 	text-align:center;
 	width: 100px;
 	-webkit-box-shadow: none transparent;
