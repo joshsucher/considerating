@@ -2,8 +2,8 @@
 	<%= form_for @consideration, :remote => true do |f| %>
 		<div class="rating_logged_out">
 			<%= range_field_tag :rating, :step => "0.1", :in => 10...101 %>
-			<div class="vote-creepy">creepy</div> 
-			<div class="vote-considerate">considerate</div>
+			<div id="vote-container"><div class="vote-creepy">creepy</div> 
+			<div class="vote-considerate">considerate</div></div>
 		</div>
 		<div class="actions vote-button"><%= f.submit "vote", :class => "btn2 span2", :id => "vote-button" %></div>
 	<% end %>

@@ -3,12 +3,12 @@
 	</div>
 		<div id="user_nav" class="user_nav">
 			<% if current_user %>
-				<b><%= link_to "#{current_user.name}".downcase, user_path(current_user) %></b> |
-				<%= link_to "submit new consideration", '/new' %> |
-				<%= link_to "sign out of google", signout_path %> |
+				<b><%= link_to "#{current_user.name}".downcase, user_path(current_user) %></b><div class="navdivider">|</div>
+				<%= link_to "submit new consideration", '/new' %><div class="navdivider">|</div>
+				<%= link_to "sign out of google", signout_path %><div class="navdivider">|</div>
 			<% else %>
-				<%= link_to "sign in with google to submit new considerations", "/auth/google_oauth2" %> |
+				<%= link_to "sign in with google to submit new considerations", "/auth/google_oauth2" %><div class="navdivider">|</div>
 			<% end %>
-			<%= link_to "view all", '/index' %> |  
+			<%= link_to "view all", '/index' %><div class="navdivider">|</div>  
 			<%= link_to "about", about_path %>
 	</div>

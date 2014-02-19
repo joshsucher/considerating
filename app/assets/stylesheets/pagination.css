@@ -1,3 +1,11 @@
+.pagination {
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	padding-bottom:10px;
+	display:inline-block;
+}
+
 .pagination .current {
     -webkit-box-shadow: none;
 	-moz-box-shadow: none;
@@ -13,6 +21,14 @@
 	background-color:transparent;
 }
 
+@media only screen 
+and (max-width : 399px) {
+.pagination a.previous_page, .pagination a.next_page {
+display:none;
+}
+}
+
+
 .pagination a.previous_page:hover, .pagination a.next_page:hover {
     -webkit-box-shadow: none;
 	-moz-box-shadow: none;
@@ -22,6 +38,7 @@
 }
 
 .digg_pagination {
+text-align:center;
   background: transparent;
   cursor: default;
   /* self-clearing method: */ }
@@ -54,13 +71,26 @@ border-radius: 40px;
     background-repeat: repeat-y;	
     }
   .digg_pagination .disabled {
-    color: #333333;
+background-color:transparent;
+border:0px;
+    color: #999999;
     -webkit-box-shadow: none;
 	-moz-box-shadow: none;
   padding: 0 14px;
+  font-weight:700;
 	line-height:34px;
-	visibility:hidden;
+	#visibility:hidden;
 	}
+	
+	@media only screen 
+and (max-width : 399px) {
+  .digg_pagination .disabled {
+display:none;
+}
+}
+
+	
+	
   .digg_pagination .current {
     font-style: normal;
     font-weight: 700;

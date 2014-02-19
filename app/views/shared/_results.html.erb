@@ -1,8 +1,9 @@
 <div id="vote-results">
 	<% if @consideration.votes_count != 0 %>
-		<canvas id="graph<%= @consideration.id %>" width="440" height="120">fallback</canvas><br />
-		<div id="graph-creepy">creepy</div> 
-		<div id="graph-considerate">considerate</div>
+		<!-- <canvas id="graph<%= @consideration.id %>" width="440" height="120">fallback</canvas><br /> -->
+		<div class="bezier_and_labels"><div class="bezier" id="graph<%= @consideration.id %>"></div><br />
+		<div class="graph-label-container"><div class="graph-creepy">creepy</div> 
+		<div class="graph-considerate">considerate</div></div></div>
 		<div id="total-vote-count"><%= pluralize(@consideration.votes_count, "vote") %> so far</div>
 	<% end %>
 </div>
@@ -10,29 +11,52 @@
 	function draw(points) {
 		var canvas = document.getElementById('graph<%= @consideration.id %>');  
 		var highest = Math.max.apply(Math, points);
-		if (canvas.getContext){  
-  			var ctx = canvas.getContext('2d');  
-  			// drawing code here  		
-  			ctx.strokeStyle = "#000000"; 
-  			ctx.lineJoin = "round";
-  			ctx.lineWidth = 2;
-  			ctx.beginPath();
-  			ctx.moveTo(0,115);
-  			ctx.bezierCurveTo(20, 115, 
-  							  20, 115-(points[0]/highest)*100, 
-  							  40, 115-(points[0]/highest)*100);
+		
+		var buildBezier = SVG('graph<%= @consideration.id %>');
+		
+		var bezPath = 'M0,115'
+		bezPath += ' C20,115'
+		bezPath += ',20,' + (115-(points[0]/highest)*100).toString()
+		bezPath += ',40,' + (115-(points[0]/highest)*100).toString()
+				
   			for (i=1; i<10; i++) {
-  				ctx.bezierCurveTo(20+(i*40), 115-(points[i-1]/highest)*100, 
-  							  	  20+(i*40), 115-(points[i]/highest)*100, 
-  							  	  40+(i*40), 115-(points[i]/highest)*100);
+  			
+  		bezPath += ' C' + (20+(i*40)).toString() + ',' + (115-(points[i-1]/highest)*100).toString()
+  		bezPath += ',' + (20+(i*40)).toString() + ',' + (115-(points[i]/highest)*100).toString()
+  		bezPath += ',' + (40+(i*40)).toString() + ',' + (115-(points[i]/highest)*100).toString()
+  			
 			}
-  			ctx.bezierCurveTo(420, 115-(points[9]/highest)*100, 
-  							  420, 115, 
-  							  440, 115);
-			ctx.shadowColor="black";
-			ctx.shadowBlur=1;
-  			ctx.stroke();
-		} 
+
+		bezPath += ' C420,' + (115-(points[9]/highest)*100).toString()
+		bezPath += ',420,115'
+		bezPath += ',440,115'
+		
+
+var drawBezier = buildBezier.viewbox(0,0,440,120).path(bezPath).fill('none').stroke({ width: 3 });
+
+// 		if (canvas.getContext){  
+//   			var ctx = canvas.getContext('2d');  
+//   			// drawing code here  		
+//   			ctx.strokeStyle = "#000000"; 
+//   			ctx.lineJoin = "round";
+//   			ctx.lineWidth = 2;
+//   			ctx.beginPath();
+//   			ctx.moveTo(0,115);
+//   			ctx.bezierCurveTo(20, 115, 
+//   							  20, 115-(points[0]/highest)*100, 
+//   							  40, 115-(points[0]/highest)*100);
+//   			for (i=1; i<10; i++) {
+//   				ctx.bezierCurveTo(20+(i*40), 115-(points[i-1]/highest)*100, 
+//   							  	  20+(i*40), 115-(points[i]/highest)*100, 
+//   							  	  40+(i*40), 115-(points[i]/highest)*100);
+// 			}
+//   			ctx.bezierCurveTo(420, 115-(points[9]/highest)*100, 
+//   							  420, 115, 
+//   							  440, 115);
+// 			ctx.shadowColor="black";
+// 			ctx.shadowBlur=1;
+//   			ctx.stroke();
+// 		} 
 	}
 	var points<%= @consideration.id %> = [<%= @consideration.v1 %>, <%= @consideration.v2 %>, 
 			 	  <%= @consideration.v3 %>, <%= @consideration.v4 %>,

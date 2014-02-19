@@ -5,7 +5,9 @@
   		<%= stylesheet_link_tag    "application", :media => "all" %>
   		<%= javascript_include_tag "application" %>
   		<%= csrf_meta_tags %>
-  		<script type="text/javascript" src="http://use.typekit.com/vff5mnj.js"></script>
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript" src="http://use.typekit.com/vff5mnj.js"></script>
+<meta name="description" content="Considerating is a tool for crowdsourcing your social instincts.">
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 		<script type="text/javascript">
 			 var _gaq = _gaq || [];
@@ -22,7 +24,7 @@
 		</script>
 	</head>
 	<body>
-		<div class="container"><div id="header_container">
+		<div class="container-fluid"><div id="header_container">
 			<div id="banner">
 				<%= link_to "considerating.", root_path %>
 			</div>
@@ -32,7 +34,8 @@
 				<%= yield %>
 			</div>
 		</div>
+	<script>
+	  $.backstretch("<%= asset_path 'cloudy2.jpg' %>");
+</script>
 	</body>
 </html>
-
-
