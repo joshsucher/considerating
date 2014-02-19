@@ -2,8 +2,8 @@
 	<% if @consideration.votes_count != 0 %>
 		<!-- <canvas id="graph<%= @consideration.id %>" width="440" height="120">fallback</canvas><br /> -->
 		<div class="bezier_and_labels"><div class="bezier" id="graph<%= @consideration.id %>"></div><br />
-		<div class="graph-label-container"><div class="graph-creepy">creepy</div> 
-		<div class="graph-considerate">considerate</div></div></div>
+		<div class="graph-label-container"><div class="graph-considerate">considerate</div> 
+		<div class="graph-creepy">creepy</div></div></div>
 		<div id="total-vote-count"><%= pluralize(@consideration.votes_count, "vote") %> so far</div>
 	<% end %>
 </div>
