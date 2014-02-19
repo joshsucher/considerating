@@ -36,6 +36,7 @@ gem 'tanker'
 
 gem 'will_paginate', '3.0.3'
 
+gem 'rack-canonical-host'
 gem 'twitter', '~>5.0', :require => 'twitter'
 
 # Gems used for testing

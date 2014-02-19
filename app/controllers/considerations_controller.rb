@@ -13,7 +13,7 @@ client = Twitter::REST::Client.new do |config|
   config.access_token        = ENV['TWTR_ACCESS_TOKEN']
   config.access_token_secret = ENV['TWTR_ACCESS_TOKEN_SECRET']
 end
-  		lastcons = @consideration.content.truncate(114, omission: '...') + " http://considerating.com" + consideration_path(@consideration)
+  		lastcons = @consideration.content.truncate(114, omission: '...') + " http://www.considerating.com" + consideration_path(@consideration)
 
   		client.update(lastcons)
 			flash[:success] = "Consideration created!"
