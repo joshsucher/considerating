@@ -1,5 +1,5 @@
 <div id="consideration-show" class="hero-unit delete-able">
 	<div id="consideration-content-big" class="row">
-		<div id="consideration-text">&#8220;<%= wrap(@consideration.content) %>&#8221;</div>
+		<div id="consideration-text">&#8220;<%= wrap(@consideration.content).gsub(/^"|"$/,"") %>&#8221;</div>
 	</div>
 	<%= render 'shared/page_bottom' %>

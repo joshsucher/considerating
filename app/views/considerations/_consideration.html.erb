@@ -1,6 +1,6 @@
 <div id="each-consideration" class="hero-unit delete-able">
     <div id="consideration-text">
-    	&#8220;<%= wrap(consideration.content) %>&#8221;<br />
+    	&#8220;<%= wrap(consideration.content).gsub(/^"|"$/,"") %>&#8221;<br />
 	</div>
 	<% @consideration = consideration %>
 	<div id="voting" class="vote-form">
