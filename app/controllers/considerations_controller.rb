@@ -3,10 +3,19 @@ class ConsiderationsController < ApplicationController
 	before_filter :admin_user,   :only => :destroy
 	before_filter :no_banned_users,   :only => [:create, :destroy]
 	before_filter :limit_anonymous_voting 
-	  	
+		  	
   	def create
   		@consideration = current_user.considerations.build(params[:consideration])
   		if @consideration.save
+client = Twitter::REST::Client.new do |config|
+  config.consumer_key        = ENV['TWTR_CONSUMER_KEY']
+  config.consumer_secret     = ENV['TWTR_CONSUMER_SECRET']
+  config.access_token        = ENV['TWTR_ACCESS_TOKEN']
+  config.access_token_secret = ENV['TWTR_ACCESS_TOKEN_SECRET']
+end
+  		lastcons = @consideration.content.truncate(114, omission: '...') + " http://considerating.com" + consideration_path(@consideration)
+
+  		client.update(lastcons)
 			flash[:success] = "Consideration created!"
 			redirect_to user_path(current_user)
 		end

@@ -13,10 +13,10 @@ group :development do
 end
 
 # Gems used only for assets and not required
-# in production environments by default.
+# in production environments by default. removed 3.2.3 sass and 3.2.1 coffee
 group :assets do
-  gem 'sass-rails',   '3.2.3'
-  gem 'coffee-rails', '3.2.1'
+  gem 'sass-rails'
+  gem 'coffee-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
@@ -35,6 +35,8 @@ gem 'tanker'
 # gem 'sunspot_solr'
 
 gem 'will_paginate', '3.0.3'
+
+gem 'twitter', '~>5.0', :require => 'twitter'
 
 # Gems used for testing
 group :test do
