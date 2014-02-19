@@ -1,7 +1,7 @@
 <div id="new-vote-<%= @consideration.id %>">
 	<%= form_for @consideration, :remote => true do |f| %>
 		<div class="rating_logged_out">
-			<%= range_field_tag :rating, :step => "0.1", :in => 10...101 %>
+			<%= range_field_tag :rating, :step => "0.1", :in => 10...101, :placeholder => 5 %>
 			<div id="vote-container"><div class="vote-creepy">creepy</div> 
 			<div class="vote-considerate">considerate</div></div>
 		</div>
