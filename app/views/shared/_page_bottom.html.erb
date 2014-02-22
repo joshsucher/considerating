@@ -13,7 +13,7 @@
 				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 			</div>
 			<div class="mini-hero home-bottom">
-				<%= link_to "random", root_path %> • <%= link_to "view all", index_path %>
+				<%= link_to "random", root_path %>  <%= link_to "#{image_tag("/assets/twitter.png", :style => "vertical-align:-20%;padding-left:20px;padding-right:20px;")}".html_safe, "http://twitter.com/considerating" %>  <%= link_to "view all", index_path %>
 			</div>
 	<% end %>
 </div>
