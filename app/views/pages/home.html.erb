@@ -3,7 +3,7 @@
 		<% if Consideration.count != 0 %>
 			<div class="row">
 				<div id="consideration-text">
-					&#8220;<%= wrap(@consideration.content).gsub(/^"|"$/,"") %>&#8221;
+					&#8220;<%= wrap(@consideration.content.gsub(/^"|"$/,"")) %>&#8221;
 				</div>
 			</div>
 		<% end %>
