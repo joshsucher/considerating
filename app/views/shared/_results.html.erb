@@ -1,6 +1,6 @@
 <div id="vote-results">
 	<% if @consideration.votes_count != 0 %>
-		<!-- <canvas id="graph<%= @consideration.id %>" width="440" height="120">fallback</canvas><br /> -->
+		<canvas id="canv<%= @consideration.id %>" width="440" height="120" style="display:none;">fallback</canvas>
 		<div class="bezier_and_labels"><div class="bezier" id="graph<%= @consideration.id %>"></div><br />
 		<div class="graph-label-container"><div class="graph-considerate">considerate</div> 
 		<div class="graph-creepy">creepy</div></div></div>
@@ -9,7 +9,7 @@
 </div>
 <script type="text/javascript">
 	function draw(points) {
-		var canvas = document.getElementById('graph<%= @consideration.id %>');  
+		var canvas = document.getElementById('canv<%= @consideration.id %>');  
 		var highest = Math.max.apply(Math, points);
 		
 		var buildBezier = SVG('graph<%= @consideration.id %>');
@@ -34,29 +34,32 @@
 
 var drawBezier = buildBezier.viewbox(0,0,440,120).path(bezPath).fill('none').stroke({ width: 3 });
 
-// 		if (canvas.getContext){  
-//   			var ctx = canvas.getContext('2d');  
-//   			// drawing code here  		
-//   			ctx.strokeStyle = "#000000"; 
-//   			ctx.lineJoin = "round";
-//   			ctx.lineWidth = 2;
-//   			ctx.beginPath();
-//   			ctx.moveTo(0,115);
-//   			ctx.bezierCurveTo(20, 115, 
-//   							  20, 115-(points[0]/highest)*100, 
-//   							  40, 115-(points[0]/highest)*100);
-//   			for (i=1; i<10; i++) {
-//   				ctx.bezierCurveTo(20+(i*40), 115-(points[i-1]/highest)*100, 
-//   							  	  20+(i*40), 115-(points[i]/highest)*100, 
-//   							  	  40+(i*40), 115-(points[i]/highest)*100);
-// 			}
-//   			ctx.bezierCurveTo(420, 115-(points[9]/highest)*100, 
-//   							  420, 115, 
-//   							  440, 115);
-// 			ctx.shadowColor="black";
-// 			ctx.shadowBlur=1;
-//   			ctx.stroke();
-// 		} 
+		if (canvas.getContext){  
+  			var ctx = canvas.getContext('2d');  
+  			// drawing code here  		
+  			ctx.strokeStyle = "#000000"; 
+  			ctx.lineJoin = "round";
+  			ctx.lineWidth = 2;
+  			ctx.beginPath();
+  			ctx.moveTo(0,115);
+  			ctx.bezierCurveTo(20, 115, 
+  							  20, 115-(points[0]/highest)*100, 
+  							  40, 115-(points[0]/highest)*100);
+  			for (i=1; i<10; i++) {
+  				ctx.bezierCurveTo(20+(i*40), 115-(points[i-1]/highest)*100, 
+  							  	  20+(i*40), 115-(points[i]/highest)*100, 
+  							  	  40+(i*40), 115-(points[i]/highest)*100);
+			}
+  			ctx.bezierCurveTo(420, 115-(points[9]/highest)*100, 
+  							  420, 115, 
+  							  440, 115);
+			ctx.shadowColor="black";
+			ctx.shadowBlur=1;
+  			ctx.stroke();
+  			var dataURL = canvas.toDataURL();
+  			var canvimg = document.getElementById('img<%= @consideration.id %>');
+			document.write('<img src="' + dataURL + '" style="display:none;">');
+		} 
 	}
 	var points<%= @consideration.id %> = [<%= @consideration.v1 %>, <%= @consideration.v2 %>, 
 			 	  <%= @consideration.v3 %>, <%= @consideration.v4 %>,
